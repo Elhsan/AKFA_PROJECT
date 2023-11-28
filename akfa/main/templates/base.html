@@ -1,0 +1,40 @@
+{% load django_bootstrap5 %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        {% block title %}
+            AKFA
+        {% endblock %}
+    </title>
+    
+    {% bootstrap_css %}
+
+    {% block link %}
+
+    {% endblock %}
+
+    {% block style %}
+
+    {% endblock %}
+    
+  </head>
+  <body>
+      {% include "navbar.html" %}
+        <div id="messages" style="text-align: center;">
+            {% bootstrap_messages %}
+        </div>
+
+        {% block content %}
+
+        {% endblock %}
+
+        {% block script %}
+
+        {% endblock %}
+    
+  </body>
+</html>

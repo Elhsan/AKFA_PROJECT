@@ -1,0 +1,26 @@
+{% load static %}
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+<!-- box icons  -->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<!-- custom css  -->
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+
+
+
+<header class="header">
+    <logo class="logo">
+        <img src="img/fffa.png" alt="">
+    </logo>
+    <i class='bx bx-menu' id="menu-icon"></i>
+    <nav class="navbar">
+        <a href="{% url 'home' %}" class="active">Home</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+
+<script src="{% static 'js/navbar.js' %}">
+</script>
