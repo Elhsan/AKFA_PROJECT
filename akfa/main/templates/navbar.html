@@ -5,22 +5,19 @@
 <!-- custom css  -->
 <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
 
-
-
 <header class="header">
     <logo class="logo">
-        <img src="img/fffa.png" alt="">
+        <img src="{% static 'img/Akfa_logo.png' %}" alt="Akfa_logo"  height="60px">
     </logo>
     <i class='bx bx-menu' id="menu-icon"></i>
     <nav class="navbar">
-        <a href="{% url 'home' %}" class="active">Home</a>
-        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'home' %}" {% if request.path == '/' %}class="active"{% endif %}>Home</a>
+        <a href="{% url 'about' %}" {% if request.path == '/about/' %}class="active"{% endif %}>About</a>
         <a href="#services">Services</a>
         <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact"{% if request.path == '/contact/' %}class="active"{% endif %}>Contact</a>
     </nav>
 </header>
 
+<script src="{% static 'js/navbar.js' %}"></script>
 
-<script src="{% static 'js/navbar.js' %}">
-</script>

@@ -1,0 +1,139 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+<div class="footer-wrapper">
+    <div class="upper-footer">
+        <div class='contact-info'>
+            <h2 style="color: aliceblue;">Akfa</h2>
+            <p>Contact Info</p>
+            <p>17 Princess Road, London, Greater London NW1 8JR, UK</p>
+        </div>
+
+        <div class='categories'>
+            <h3>Categories</h3>
+            <p><a href="/#Laptops & Computers">Laptops & Computers</a></p>
+            <p><a href="/#Cameras & Photography">Cameras & Photography</a></p>
+            <p><a href="/#Smart Phones & Tablets">Smart Phones & Tablets</a></p>
+            <p><a href="/#Video Games & Consoles">Video Games & Consoles</a></p>
+            <p><a href="/#Waterproof Headphones">Waterproof Headphones</a></p>
+        </div>
+
+        <div class='categories'>
+            <h3>Customer Core</h3>
+            <p><a href='/#My Account'>My Account</a></p>
+            <p><a href='/#Discount'>Discount</a></p>
+            <p><a href='/#Returns'>Returns</a></p>
+            <p><a href='/#Orders History'>Orders History</a></p>
+            <p><a href='/#Order Tracking'>Order Tracking</a></p>
+        </div>
+
+        <div class='categories'>
+            <h3>Pages</h3>
+            <p><a href='/#Blog'>Blog</a></p>
+            <p><a href='/#Browse the Shop'>Browse the Shop</a></p>
+            <p><a href='/#Category'>Category</a></p>
+            <p><a href='/#Pre-Built Pages'>Pre-Built Pages</a></p>
+            <p><a href='/#Visual Composer Elements'>Visual Composer Elements</a></p>
+            <p><a href='/#WooCommerce Pages'>WooCommerce Pages</a></p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .footer-wrapper {
+        background-color: black;
+        padding: 100px 0 100px 150px;
+    }
+    
+    .footer-wrapper .upper-footer {
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr 3fr;
+        gap: 50px;
+    }
+    
+    .footer-wrapper .upper-footer h3 {
+        font-size: 1em;
+    }
+    
+    .footer-wrapper .upper-footer div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .footer-wrapper .upper-footer div a {
+        text-decoration: none;
+        color: gray;
+    }
+    
+    .footer-wrapper .upper-footer .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding-left: 100px;
+        color: gray;
+    }
+    
+    .footer-wrapper .upper-footer .contact-info h2 {
+        color: black;
+    }
+    
+    .footer-wrapper .upper-footer .contact-info .details {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .footer-wrapper .upper-footer .contact-info .details input {
+        width: 50%;
+        height: 40px;
+        border: none;
+        background-color: snow;
+    }
+    
+    .footer-wrapper .upper-footer .contact-info .details input::placeholder {
+        color: gray;
+    }
+    
+    .footer-wrapper .upper-footer .contact-info .details button {
+        border-radius: 5px;
+        position: relative;
+        right: 10px;
+    }
+    
+    @media (max-width: 1200px) {
+        .footer-wrapper {
+            padding: 100px 0 100px 50px;
+        }
+    
+        .footer-wrapper .upper-footer {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 50px;
+        }
+    
+        .footer-wrapper .upper-footer .contact-info {
+            padding-left: 0;
+        }
+    }
+    
+    @media (max-width: 1000px) {
+        .footer-wrapper {
+            padding: 100px 0 100px 50px;
+        }
+    
+        .footer-wrapper .upper-footer {
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+    }
+    
+    @media (max-width: 600px) {
+        .footer-wrapper {
+            padding: 100px 0 100px 20px;
+        }
+    
+        .footer-wrapper .upper-footer {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+    }
+</style>
