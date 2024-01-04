@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 
 
@@ -7,16 +8,66 @@
 {% endblock %}
 
 {% block content %}
-<section class="about" id="about">
-    <div class="about-img">
-        <img src="images/about-image.png" alt="">
+<div class="home">
+    <div class="container">
+      <img src="{% static 'img/romax.jpg' %}" alt="Your Image" class="image">
+      <div class="text-content">
+        <h1>Romax качественные двери и коробки</h1>
+        <p>Производство началось в 2003 году. Начав с дверей и Окна Aldox, с годами мы стали уникальным магазином с большим количеством клиентов. В 2014 году, после изучения мнения заказчиков, был добавлен цех по изготовлению дверей и коробок из акфа пласт. В 2017 году он начал обслуживать почти 20 000 клиентов. С 2019 года в серии Thermo и Exculive добавлен новый пол. В настоящее время количество наших клиентов превышает 100 000 человек.</p>
+        <button class="yellow-button">Подробнее</button>
+      </div>
     </div>
-    <div class="about-content">
-        <h2 class="heading">About <span>Me!</span></h2>
-        <h3>Professional Web Developer and WordPress Developer</h3>
-        <p>Hi, I'm M.Bilal, a Web, WordPress & eCommerce Developer and Shopify Developer. With extensive experience on Fiverr, I specialize in creating WordPress websites, eCommerce stores, Shopify website and custom solutions. Let's work together to bring your vision to life.</p>
-        <a href="#portfolio"  class="btn">more Info </a>
-    </div>
-</section>
-
+  </div>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+    .home {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+    
+      .image {
+        border-radius: 10px;
+        max-width: 450px;
+        margin-bottom: 20px;
+      }
+    
+      .text-content {
+        flex: 1;
+        max-width: 620px; /* Adjust the max-width as needed */
+      }
+    
+      @media (max-width: 1270px) {
+        .container {
+          flex-direction: column;
+        }
+    
+        .text-content {
+          max-width: 100%;
+        }
+      }
+    
+      .yellow-button {
+        background-color: #FE951E;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+</style>
 {% endblock %}

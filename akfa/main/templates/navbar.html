@@ -11,11 +11,11 @@
     </logo>
     <i class='bx bx-menu' id="menu-icon"></i>
     <nav class="navbar">
-        <a href="{% url 'home' %}" {% if request.path == '/' %}class="active"{% endif %}>Home</a>
-        <a href="{% url 'about' %}" {% if request.path == '/about/' %}class="active"{% endif %}>About</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact"{% if request.path == '/contact/' %}class="active"{% endif %}>Contact</a>
+        <a href="{% url 'home' %}" {% if request.path == '/' %}class="active"{% endif %}>Главная</a>
+        <a href="{% url 'about' %}" {% if request.path == '/about/' %}class="active"{% endif %}>О нас</a>
+        <a href="{% url 'portfolio' %}" {% if request.path == '/portfolio/' %}class="active"{% endif %}>Портфолио</a>
+        <a href="{% url 'product' %}" {% if request.path == '/product/' %}class="active"{% endif %}>Продукты</a>
+        <a href="{% url 'contact' %}" {% if request.path == '/contact/' %}class="active"{% endif %}>Контакты</a>
     </nav>
 </header>
 
