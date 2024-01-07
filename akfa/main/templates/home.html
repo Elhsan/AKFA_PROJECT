@@ -1,351 +1,1676 @@
-{% extends 'base.html' %}
-{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&family
+                =Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+     integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
 
-{% block link %}
-  <link rel="stylesheet" href="{% static 'css/home.css' %}">
-{% endblock %}
+    <title>Окна и двери</title>
+  </head>
+  <body>
+   
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container-fluid">
 
-{% block title %}
-  Home
-{% endblock %}
-
-{% block content %}
-<div class="home">
-  <div class="container">
-    <img src="{% static 'img/romax.jpg' %}" alt="Your Image" class="image">
-    <div class="text-content">
-      <h1>Romax качественные двери и коробки</h1>
-      <p>Производство началось в 2003 году. Начав с дверей и Окна Aldox, с годами мы стали уникальным магазином с большим количеством клиентов. В 2014 году, после изучения мнения заказчиков, был добавлен цех по изготовлению дверей и коробок из акфа пласт. В 2017 году он начал обслуживать почти 20 000 клиентов. С 2019 года в серии Thermo и Exculive добавлен новый пол. В настоящее время количество наших клиентов превышает 100 000 человек.</p>
-      <button class="yellow-button">Подробнее</button>
-    </div>
-  </div>
-</div>
-
-<div class="portfolio">
-  <small style="color: #FE951E;"><b>ПОРТФОЛИО</b></small>
-  <h1>выполненные работы</h1>
-  <div class="works">
-    <div class="work">
-      <img src="{% static 'img/romax.jpg' %}" class="work-image">
-    </div>
-    <div class="work">
-      <img src="{% static 'img/romax.jpg' %}" class="work-image">
-    </div>
-    <div class="work">
-      <img src="{% static 'img/romax.jpg' %}" class="work-image">
-    </div>
-    <div class="work">
-      <img src="{% static 'img/romax.jpg' %}" class="work-image">
-    </div>
-  </div>
-</div>
-
-<div class="product">
-    <small style="color: #FE951E;"><b>ПРОДУКТЫ</b></small>
-    <h1>Качественные и доступные продукты</h1>
-
-    <div class="product-works">
-      <div class="product-work">
-        <img src="{% static 'img/romax.jpg' %}" class="product-work-image">
-        <a href="#" class="product-overlay">
-          <span>Подробнее</span>
+        <a class="navbar-brand" href="#">
+            <img src="img/logo.png" alt="">
         </a>
-      </div>
-      <div class="product-work">
-        <img src="{% static 'img/romax.jpg' %}" class="product-work-image">
-        <a href="#" class="product-overlay">
-          <span>Подробнее</span>
-        </a>
-      </div>
-      <div class="product-work">
-        <img src="{% static 'img/romax.jpg' %}" class="product-work-image">
-        <a href="#" class="product-overlay">
-          <span>Подробнее</span>
-        </a>
-      </div>
-    </div>
-</div>
 
-<div class="contact-section">
-  <div class="background-image"></div>
-  <h1>Пожалуйста, свяжитесь с нами, если у вас есть какие-либо вопросы или предложения.</h1>
-  <button class="contact-button">КОНТАКТ</button>
-</div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-<div class="contact">
-  <form>      
-    <input name="name" type="text" class="feedback-input" placeholder="Name" />   
-    <input name="email" type="text" class="feedback-input" placeholder="Email" />
-    <input name="text" class="textarea" class="feedback-input" placeholder="Comment"></input>
-    <input type="submit" value="SUBMIT"/>
-  </form>
-</div>
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  .home {
-    padding-top: 120px;
-    padding-bottom: 120px;
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <ul class="navbar-nav our-primary-menu ml-auto">
+            <li>
+              <a href="{% url 'home' %}">Главная</a>
+            </li>
+            <li>
+              <a href="{% url 'about' %}">О нас</a>
+            <li>
+              <a href="{% url 'portfolio' %}">Портфолио</a>
+            </li>
+            <li>
+              <a href="{% url 'product' %}">Продукты</a>
+            </li>
+            <div class="contact">
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </div>
+          </ul>
+         
+          <div class="header-info align-items-center d-flex">
+            <div class="header-cll clearfix">
+                <div class="header-cll-icon float-left mr-3 h-100">
+                    <span> <i class="fas fa-phone-volume"></i> </span>
+                </div>
+                <div class="header-cll-info">
+                    <span class="d-block"> call Now </span>
+                    <a href="tel: +1514312-5678"> +998(33)717-88-00</a>
+                </div>
+            </div>
+            
+        </div>
+        </div>
+      </div>
+    </nav>
+
+
+
+    <!--Slider SEction Start-->
+
+    <section class="slider-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 slider-content-wrap">
+                    <div class="slider-content">
+                        <h6>Мы здесь для того, чтобы</h6>
+                        <h1>Мы верим в тех, кто создан для того, чтобы делать больше</h1>
+                        <p>Мы здесь для вас, потому что верим в тех, кто стремится к большему</p>
+                        <a href="#" class="btn btn-primary">View More...</a>
+
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="logo-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-6">
+                    <div class="client-logo">
+                        <ul class="d-flex justify-content-between">
+                            <li><a href="#"> <img src="./img/image1.png" alt=""> </a></li>
+                            <li><a href="#"> <img src="./img/image2.png" alt=""> </a></li>
+                            <li><a href="#"> <img src="./img/image4.png" alt=""> </a></li>
+                            <li><a href="#"> <img src="./img/image5.png" alt=""> </a></li>
+                            <li><a href="#"> <img src="./img/image3.png" alt=""> </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="About-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-img">
+                        <img src="img/img3.png" alt="">
+                        <div class="about-img-text">
+                           <div class="about-text-inner">
+                            <h2>10</h2>
+                            <p>Years Of Experience</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-text">
+                        <div class="finix-text">
+                            <h6>О компании</h6>
+                            <h2>Мы успешно занимаемся производством и установкой окон и дверей более 10 лет</h2>
+                            <p>За это время мы наработали высокий уровень эффективности и надежности в своей деятельности.</p>
+                            <strong>В нашей компании мы уделяем особое внимание трем основным аспектам:</strong>
+                            <ul>
+                                <li>Полезная информация: Мы стремимся предоставлять нашим клиентам максимум полезной информации о наших продуктах.</li>
+                                <li>Надежность: Мы гордимся своей репутацией надежного партнера.</li>
+                                <li>Инновации: Мы постоянно стремимся к инновациям в нашей продукции.</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary"> veiw More... </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="why-choose-us graybg pt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="why-us-text">
+                            <div class="finix-text">
+                                <h6>Прозрачный процесс</h6>
+                                <h2>Почему люди выбирают нас</h2>
+                                <p> Мы ценим прозрачность в отношениях с нашими клиентами. Наш процесс от начала до конца основан на ясности и открытости. Мы поддерживаем открытый диалог,предоставляя клиентам всю необходимую информацию о, наших продуктах, услугах и процессе сотрудничества.</p>
+                                <img src="img/choose.png" alt="">
+                                <a href="https://t.me/okoshkavdom" class="play-animation-btn"> <i class="fa-solid fa-circle-play"></i> </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row future-item text-center">
+
+                            <div class="col-lg-6 col-md-6 mt-4">
+                                <div class="features-items">
+                                    <div class="ft-icon">
+                                        <i class="fa-solid fa-percent"></i>
+                                    </div>
+                                    <h3 class="py-4">Гарантия</h3>
+                                    <p>Наши окна и двери обеспечивают высочайший уровень гарантии, подтверждая надежность и долговечность каждого изделия</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6">
+                                <div class="features-items">
+                                    <div class="ft-icon">
+                                        <i class="fa-solid fa-gauge"></i>
+                                    </div>
+                                    <h3 class="py-4">Скорость</h3>
+                                    <p>Мы ценим ваше время, поэтому наши окна и двери производятся с учетом требований оперативности.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6">
+                                <div class="features-items">
+                                    <div class="ft-icon">
+                                        <i class="fa-solid fa-hand"></i>
+                                    </div>
+                                    <h3 class="py-4">Надежность </h3>
+                                    <p>Наши окна и двери – воплощение надежности.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6">
+                                <div class="features-items mtop-4">
+                                    <div class="ft-icon">
+                                        <i class="fa-solid fa-people-group"></i>
+                                    </div>
+                                    <h3 class="py-4">Опыт </h3>
+                                    <p>С многолетним опытом в индустрии, мы являемся экспертами в производстве окон и дверей</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+    <section class="applay-now-section py-5">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6 text-center">
+                    <div class="finix-text">
+                        <h6>Funding circles</h6>
+                        <h2 class="text-bold">Вы заслуживаете лучших окон и дверей</h2>
+                        <p class="text-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-6">
+                    <div class="apply-now-left-text">
+                        <h2 class="mb-4">Обычно, наш процесс состоит из 4 шагов, чтобы обеспечить вас лучшими окнами и дверьми для вашего дома.</h2>
+                        <div class="step-taimeline">
+                            <ul>
+                                <li data-counter="1">
+                                    <strong>Запросите консультацию</strong>
+                                    <p>Свяжитесь с нами, чтобы получить профессиональную консультацию по выбору подходящих окон и дверей для вашего дома. </p>
+                                </li>
+
+                                <li data-counter="2">
+                                    <strong>Индивидуальный дизайн</strong>
+                                    <p>Вместе мы разработаем индивидуальный дизайн, отражающий ваш вкус и соответствующий архитектурным особенностям вашего дома.</p>
+                                </li>
+
+                                <li data-counter="3">
+                                    <strong>Установка в течение 15 дней</strong>
+                                    <p>Мы ценим ваше время, поэтому после выбора окон и дверей, наша команда обеспечит быструю и профессиональную установку в течение 15 дней.</p>
+                                </li>
+
+                                <li data-counter="4">
+                                    <strong>Гарантия и обслуживание</strong>
+                                    <p>После установки, мы предоставим вам гарантию на наши изделия и обеспечим необходимое обслуживание.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="" class="btn btn-primary mt-4">Заказать</a>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+    </section>
+
+    <section class="cll-to-action">
+        <div class="container">
+            <div class="col-to-action-bg">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <h2>Мы здесь, чтобы помочь подобрать вам окна и двери, позвоните, чтобы обсудить ваше решение</h2>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="call-to-action-phone d-flex">
+                            <span>
+                                <i class="fas fa-phone-volume    "></i>
+                            </span>
+                            <a href="tel:15143125678">+998(93)344-85-67</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="Our-company-values">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="company-valu-text">
+                        <h2 class="mb-5">Наши ценности:</h2>
+
+                        <div class="value-items d-flex">
+                            <div class="value-icon">
+                                <i class="fa-regular fa-lightbulb"></i>
+                            </div>
+                            <div class="value-text">
+                                <h3>Инновационность</h3>
+                                <p>Мы стремимся быть впереди времени, предлагая инновационные решения в мире окон и дверей.</p>
+                            </div>
+                        </div>
+
+                        <div class="value-items d-flex">
+                            <div class="value-icon">
+                                <i class="fa-regular fa-lightbulb"></i>
+                            </div>
+                            <div class="value-text">
+                                <h3>Талант</h3>
+                                <p>Наш успех основан на талантливых и высококвалифицированных специалистах, которые творчески подходят к своей работе.</p>
+                            </div>
+                        </div>
+
+                        <div class="value-items d-flex">
+                            <div class="value-icon">
+                                <i class="fa-regular fa-lightbulb"></i>
+                            </div>
+                            <div class="value-text">
+                                <h3>Повышение возможностей</h3>
+                                <p>Мы считаем, что наши окна и двери не просто выполняют функциональные задачи, они открывают новые возможности для комфорта и безопасности в вашем доме.</p>
+                            </div>
+                        </div>
+
+                        <div class="value-items d-flex">
+                            <div class="value-icon">
+                                <i class="fa-regular fa-lightbulb"></i>
+                            </div>
+                            <div class="value-text">
+                                <h3>Коммерческая ответственность</h3>
+                                <p>Мы осознаем нашу ответственность перед клиентами и обществом в целом. Наши бизнес-практики направлены на устойчивость и ответственность.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="o-c-i">
+                        <img src="./img/company2.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section  class="service-section graybg py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                    <div class="finix-text text-center">
+                        <h6> Знание рынка </h6>
+                        <h2 class="bold-text">Только лучшие профессиональные услуги</h2>
+                        <p class="w-75 m-auto">Наша компания стремится обеспечивать только высочайший уровень профессиональных услуг.</p>
+                    </div>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="services-tab mt-5">
+
+                        <ul class="nav service-tab-item  text-center  mb-3" id="pills-tab" role="tablist">
+                          <li class="nav-item">
+                            <a class="nav-link text-center active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+                               aria-controls="pills-home" aria-selected="true">
+                                  <span class="d-block"> <i class="fa-solid fa-landmark-dome"></i> </span>
+                                  <strong class="d-block">Окона</strong>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+                               aria-controls="pills-profile" aria-selected="false">
+                                  <span class="d-block"> <i class="fa-solid fa-landmark"></i> </span>
+                                  <strong class="d-block">Personal Loan</strong>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link " id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" 
+                               aria-controls="pills-contact" aria-selected="false">
+                               <span class="d-block"> <i class="fa-solid fa-business-time"></i> </span>
+                               <strong class="d-block">Business Loan</strong>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link " id="pills-contact-tab" data-toggle="pill" href="#pills-education" role="tab" 
+                               aria-controls="pills-contact" aria-selected="false">
+                               <span class="d-block"> <i class="fa-solid fa-school"></i> </span>
+                               <strong class="d-block">Education Loan</strong>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-house" role="tab" 
+                               aria-controls="pills-contact" aria-selected="false">
+                               <span class="d-block"> <i class="fa-solid fa-house"></i> </span>
+                               <strong class="d-block">House Loan</strong>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-payday" role="tab" 
+                               aria-controls="pills-contact" aria-selected="false">
+                               <span class="d-block"> <i class="fa-brands fa-leanpub"></i> </span>
+                               <strong class="d-block">Payday Loan</strong>
+                            </a>
+                          </li>
+                        </ul>
+
+                          <div class="tab-content py-5" id="pills-tabContent">
+                          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                            <div class="service-tab-content">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img src="https://sc04.alicdn.com/kf/Hb871cb386a5543f5b966fdbc0ba8a035O/257947990/Hb871cb386a5543f5b966fdbc0ba8a035O.jpg" alt="Оконные конструкции">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="services-tab-content-text">
+                                            <h3>Оконные конструкции</h3>
+                                            <p>Изысканные оконные конструкции, сочетающие в себе не только стиль, но и высокую энергоэффективность. Наша продукция создает комфорт и безопасность для вашего дома. </p>
+                                            <h3>Виды оконных конструкций</h3>
+                                            <ul>
+                                                <li>Окна с повышенной степенью безопасности</li>
+                                                <li>Энергоэффективные окна</li>
+                                                <li>Раздвижные оконные системы</li>
+                                                <li>Окна с антивандальным покрытием</li>
+                                            </ul>
+                                            <h3>Условия и требования для оконных конструкций</h3>
+                                            <p>Более подробная информация о наших оконных конструкциях, учитывающая ваши индивидуальные требования и предпочтения.</p>
+                                            <h3>Руководство по выбору оконных конструкций</h3>
+                                            <p>Наши эксперты готовы предоставить вам консультации по выбору оконных конструкций, учитывая особенности вашего дома или офиса.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        
+
+                          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                            <div class="service-tab-content">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img src="img/services-tab.png" alt="">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="services-tab-content-text">
+                                            <h3>Personal loan</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                                                 maecenas accumsan lacus vel facilisis.</p>
+                                            <h3>Types of business loan</h3>
+                                            <ul>
+                                                <li>Secured loans</li>
+                                                <li>Unsecured loans</li>
+                                                <li>Revolving credit facilities</li>
+                                                <li>Business cash advances</li>
+                                            </ul>
+                                            <h3>Eligibility and criteria for Agricultural loan</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            <h3>Agricultural loan guide</h3>
+                                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                            <div class="service-tab-content">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img src="img/services-tab.png" alt="">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="services-tab-content-text">
+                                            <h3>Business Loan</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                                                 maecenas accumsan lacus vel facilisis.</p>
+                                            <h3>Types of business loan</h3>
+                                            <ul>
+                                                <li>Secured loans</li>
+                                                <li>Unsecured loans</li>
+                                                <li>Revolving credit facilities</li>
+                                                <li>Business cash advances</li>
+                                            </ul>
+                                            <h3>Eligibility and criteria for Agricultural loan</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            <h3>Agricultural loan guide</h3>
+                                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="tab-pane fade" id="pills-education" role="tabpanel" aria-labelledby="pills-contact-tab">
+                            <div class="service-tab-content">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img src="img/services-tab.png" alt="">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="services-tab-content-text">
+                                            <h3>Education loan</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                                                 maecenas accumsan lacus vel facilisis.</p>
+                                            <h3>Types of business loan</h3>
+                                            <ul>
+                                                <li>Secured loans</li>
+                                                <li>Unsecured loans</li>
+                                                <li>Revolving credit facilities</li>
+                                                <li>Business cash advances</li>
+                                            </ul>
+                                            <h3>Eligibility and criteria for Agricultural loan</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            <h3>Agricultural loan guide</h3>
+                                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="tab-pane fade" id="pills-house" role="tabpanel" aria-labelledby="pills-contact-tab">
+                            <div class="service-tab-content">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img src="img/services-tab.png" alt="">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="services-tab-content-text">
+                                            <h3>House loan</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                                                 maecenas accumsan lacus vel facilisis.</p>
+                                            <h3>Types of business loan</h3>
+                                            <ul>
+                                                <li>Secured loans</li>
+                                                <li>Unsecured loans</li>
+                                                <li>Revolving credit facilities</li>
+                                                <li>Business cash advances</li>
+                                            </ul>
+                                            <h3>Eligibility and criteria for Agricultural loan</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            <h3>Agricultural loan guide</h3>
+                                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="tab-pane fade" id="pills-payday" role="tabpanel" aria-labelledby="pills-contact-tab">
+                            <div class="service-tab-content">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img src="img/services-tab.png" alt="">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="services-tab-content-text">
+                                            <h3>Payday loan</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                                                 maecenas accumsan lacus vel facilisis.</p>
+                                            <h3>Types of business loan</h3>
+                                            <ul>
+                                                <li>Secured loans</li>
+                                                <li>Unsecured loans</li>
+                                                <li>Revolving credit facilities</li>
+                                                <li>Business cash advances</li>
+                                            </ul>
+                                            <h3>Eligibility and criteria for Agricultural loan</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            <h3>Agricultural loan guide</h3>
+                                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                    <div class="finix-text text-center">
+                        <h6>Отзывы клиентов</h6>
+                        <h2 class="bold-text">Что говорят наши клиенты?</h2>
+
+                    </div>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+
+            <div class="row align-content-center py-5">
+                <div class="col-lg-7">
+                    <div class="tetimonial-content">
+                        <p>"Наши окна стали настоящим открытием! Высокое качество и стильный дизайн сразу привлекли наше внимание. Теперь в нашем доме стало гораздо уютнее."</p>
+                        <div class="client-details">
+                            <h5>Elshan Aliev</h5>
+                            <h6>Web-deginer</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="testimonial-image">
+                        <img src="img/man.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-member-section graybg py-5">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                    <div class="finix-text text-center">
+                        <h6>Expert People</h6>
+                        <h2 class="bold-text">Global leadership team</h2>
+                        <p class="w-75 m-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+
+            <div class="container">
+                <div class="row py-5">
+                
+                    <div class="col-lg-3">
+                        <div class="team-member">
+                            <div class="member-image">
+                                <img src="img/image1.jpg" alt="">
+                                <div class="member-socail-profile">
+                                    <ul>
+                                        <li><a href="#"> <i class="fab fa-facebook"></i> </a></li>
+                                        <li><a href="#"> <i class="fab fa-twitter"></i> </a></li>
+                                        <li><a href="#"> <i class="fab fa-instagram"></i> </a></li>
+                                        <li><a href="#"> <i class="fab fa-linkedin"></i> </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="member-content">
+                                <h4>Jerome Le Luel</h4>
+                                <p>Managing Director</p>
+                            </div>
+                        </div>
+                    </div> 
+    
+                    <div class="col-lg-3">
+                        <div class="team-member">
+                            <div class="member-image">
+                                <img src="img/image2.jpg" alt="">
+                                <div class="member-socail-profile">
+                                    <ul>
+                                        <li><a href="#"> <i class="fab fa-facebook"></i> </a></li>
+                                        <li><a href="#"> <i class="fab fa-twitter"></i> </a></li>
+                                        <li><a href="#"> <i class="fab fa-instagram"></i> </a></li>
+                                        <li><a href="#"> <i class="fab fa-linkedin"></i> </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="member-content">
+                                <h4>Andrew Learoyd</h4>
+                                <p>Chief Executive Officer</p>
+                            </div>
+                        </div>
+                    </div> 
+    
+                    <div class="col-lg-3">
+                        <div class="team-member">
+                            <div class="member-image">
+                                <img src="img/image3.jpg" alt="">
+                                <div class="member-socail-profile">
+                                    <ul>
+                                        <li><a href="#"> <i class="fab fa-facebook"></i> </a></li>
+                                        <li><a href="#"> <i class="fab fa-twitter"></i> </a></li>
+                                        <li><a href="#"> <i class="fab fa-instagram"></i> </a></li>
+                                        <li><a href="#"> <i class="fab fa-linkedin"></i> </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="member-content">
+                                <h4>Harry Nelis</h4>
+                                <p>Technology Officer</p>
+                            </div>
+                        </div>
+                    </div> 
+    
+                    <div class="col-lg-3">
+                        <div class="team-member">
+                            <div class="member-image">
+                                <img src="img/image4.jpg" alt="">
+                                <div class="member-socail-profile">
+                                    <ul>
+                                        <li><a href="#"> <i class="fab fa-facebook"></i> </a></li>
+                                        <li><a href="#"> <i class="fab fa-twitter"></i> </a></li>
+                                        <li><a href="#"> <i class="fab fa-instagram"></i> </a></li>
+                                        <li><a href="#"> <i class="fab fa-linkedin"></i> </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="member-content">
+                                <h4>Lucy Vernall</h4>
+                                <p>Chief Financial Officer</p>
+                            </div>
+                        </div>
+                    </div> 
+    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="Blog-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                    <div class="finix-text text-center">
+                        <h6>Recent news</h6>
+                        <h2 class="bold-text">Success story posts</h2>
+                        <p class="w-75 m-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                     </div>
+                </div>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+            
+            <div class="container ">
+                
+            <div class="row py-5">
+
+                <div class="col-lg-4">
+                    <div class="blog-item">
+                        <div class="blog-thumbill">
+                            <img src="img/image1 blog.jpg" alt="">
+                        </div>
+                        <div class="blog-content">
+                            <p>July 05, 2022</p>
+                            <h3><a href="#">Financing loans available to small businesses</a></h3>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>    
+                    
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="blog-item">
+                        <div class="blog-thumbill">
+                            <img src="img/image2 blog.jpg" alt="">
+                        </div>
+                        <div class="blog-content">
+                            <p> July 04, 2022 </p>
+                            <h3><a href="#">5 Ways you can prepare your business for success</a></h3>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="blog-item">
+                        <div class="blog-thumbill">
+                            <img src="img/image3 blog.jpg" alt="">
+                        </div>
+                        <div class="blog-content">
+                            <p>July 03, 2022</p>
+                            <h3><a href="#">Tips for saving money and better guide for investment</a></h3>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer py-5">
+        <div class="footer-top py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="footer-widget">
+                            <img src="img/logo2.png" alt="">
+                            <p>Lorem ipsum dolor sit amet, consec tetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="widget-socail">
+                                <ul>
+                                    <li><span>Follow Us ;</span></li>
+                                    <li><a href="#"> <i class="fab fa-facebook"></i> </a></li>
+                                    <li><a href="#"> <i class="fab fa-twitter"></i> </a></li>
+                                    <li><a href="#"> <i class="fab fa-instagram"></i> </a></li>
+                                    <li><a href="#"> <i class="fab fa-linkedin"></i> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="footer-widget">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Our Performance</a></li>
+                                <li><a href="#">Help (FAQ)</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="footer-widget">
+                            <h3>Other Resources</h3>
+                            <ul>
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                                <li><a href="#">Business Loans</a></li>
+                                <li><a href="#">Loan Services</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="footer-widget">
+                            <h3>Contact Us</h3>
+                            <div class="footer-contact">
+                                <div class="footer-content-item d-flex">
+                                    <span> <i class="fas fa-location-arrow    "></i> </span>
+                                    <a href="#"> Hathajari,Chittagong </a>
+                                </div>
+                                <div class="footer-content-item d-flex">
+                                    <span> <i class="fas fa-envelope    "></i> </span>
+                                    <a href="mailto:mdrifat01829@gmail.com">mdrifat01829@gmail.com</a>
+                                </div>
+                                <div class="footer-content-item d-flex">
+                                    <span> <i class="fas fa-phone    "></i> </span>
+                                    <a href="tel:1514312-6688">1514312-6688</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer-bottom text-center ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-copy-right pb-3" >
+                        <p>Copyright @2023 Finix. Designed By <a href="#"> Minhaj Uddin</a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- Popper.js first, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  </body>
+  <style>
+    body, span, p{
+    font-family: 'Roboto', sans-serif;
 }
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-  }
+h1, h2, h3, h4, h5, h6, a{
+    font-family: 'Rubik', sans-serif;
+}
+img{
+    max-width: 100%;
+}
+.main-header .container-fluid .slider-section {
+    min-width: 1480px;
+}
 
-  .image {
-    border-radius: 10px;
-    max-width: 450px;
-    margin-bottom: 20px;
-  }
-
-  .text-content {
-    flex: 1;
-    max-width: 620px; /* Adjust the max-width as needed */
-  }
-
-  @media (max-width: 1270px) {
-    .container {
-      flex-direction: column;
-    }
-
-    .text-content {
-      max-width: 100%;
-    }
-  }
-
-  .yellow-button {
-    background-color: #FE951E;
-    color: black;
-    border: none;
+/*  header Part  */
+.our-primary-menu{}
+.our-primary-menu li{}
+.our-primary-menu li a{
+    text-decoration: none;
+    list-style: none;
+    display: inline-block;
     padding: 10px 20px;
-    text-align: center;
+    color: #111;
+    font-weight: 500;
+}
+.our-primary-menu li a i{
+    font-size: 10px;
+}
+.header-search{
+    width: 60px;
+}
+.contact{
+
+    margin-right: 20px;
+    border-right: 2px solid #ddd;
+}
+.header-cll{
+    width: 250px;
+}
+.header-cll-icon{
+    font-size: 30px;
+    color: #e73a3e;
+}
+.header-cll-info span{
+    color: #606060;
+}
+.header-cll-info a{
+    color: #111;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 17px;
+}
+/* Drop Down Meny Start */
+.our-primary-menu li{
+    position: relative;
+}
+.our-primary-menu li ul{
+    position: absolute;
+    width: 300px;
+    left: 0;
+    top: 160%;
+    background: #fafafa;
+    list-style: none;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s ease-in-out;
+ 
+}
+.our-primary-menu li ul li:hover{
+    background: #e1e1e1;
+    display: inline-block;
+    border-radius: 10px;
+}
+.our-primary-menu li ul li{
+    flex-direction: column;
+}
+.our-primary-menu li:hover ul{
+    opacity: 1;
+    visibility: visible;
+    top: 120%;
+}
+.our-primary-menu li ul{
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Kaj */
+body .btn-primary{
+    background-color: #e73a3e !important;
+    border-color: #e73a3e;
+    padding: 10px 40px;
+    font-size: 15px;
+    position: relative;
+    z-index: 1;
+    
+}
+body .btn-primary::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #111;
+    border-color: #111;
+    z-index: -1;
+    transition: .4s;
+}
+body .btn-primary:hover::after{
+    width: 100%;
+}
+/* slider section */
+.slider-section{
+    background: url(img/main-banner2.jpg) no-repeat top center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-left: 30%;
+}
+
+.slider-content-wrap{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.header-socail{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.slider-content h6{
+    color: #e73a3e;
+}
+.slider-content h1{
+    font-size: 70px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: black;
+}
+.slider-content p{
+    font-weight: 500;
+    color: #606060;
+    font-style: italic;
+    font-size: 20px;
+   
+}
+.slider-content a{
+    margin-top: 20px;
+}
+.header-socail{}
+.header-socail ul{
+    list-style: none;
+   
+}
+.header-socail ul li{}
+.header-socail ul li a{
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin-top: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-
-  .portfolio {
-    padding: 20px;
-    text-align: center;
-  }
-
-  .works {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 10px; /* Уменьшил gap до 10px */
-    margin-top: 20px;
-    max-width: 1000px; /* Ограничиваем максимальную ширину контейнера */
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .work {
+    padding: 0 14px;
+    color: #111;
+    font-size: 20px;
+    display: inline-block;
+    
+}
+.header-socail ul li span{
+    font-size: 15px;
+    display: inline-block;
+    margin-right: 50px;
     position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    max-width: 306px;
-  }
-
-  .work-image {
-    max-width: 100%;
-    display: block;
-    border-radius: 10px;
-    transition: transform 0.3s;
-  }
-
-  .work:hover .work-image {
-    transform: scale(1.1);
-  }
-
-  
-
-
-  .product {
-    padding: 70px;
-    text-align: center;
-    background-color: gainsboro;
-  }
-
-  .product-works {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px; /* Увеличил gap до 20px */
-    margin-top: 20px;
-    max-width: 850px; /* Ограничиваем максимальную ширину контейнера */
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .product-work {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    max-width: 400px; /* Уменьшил максимальную ширину карточки */
-  }
-
-  .product-work-image {
-    max-width: 100%;
-    display: block;
-    border-radius: 10px;
-    transition: transform 0.3s;
-  }
-
-  .product-overlay {
+    margin-top: 22px;
+}
+.header-socail ul li span::after{
+    content: "";
+    height: 2px;
+    background:#111;
+    width: 30px;
     position: absolute;
-    bottom: 1px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    color: black;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
+    right: -45px;
+    top: 51%;
+}
+/* logo Section */
+.client-logo{
+    border-bottom: 2px solid #ddd;
+    padding: 40px;
+}
+.client-logo ul{
+    list-style: none;
+    padding-left: 0;
 
-  .product-work:hover .product-overlay {
-    display: block;
-  }
+}
 
-  @media (min-width: 600px) {
-    .product-work:hover .product-work-image {
-      transform: scale(1.1);
-    }
-  }
+/* About Section */
 
-  .contact-section {
+.about-img{
     position: relative;
+}
+.about-img-text{
+    position: absolute;
+    right: 100px;
+    bottom: 0;
+    background: url(img/shape.png);
+    height: 200px;
+    width: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
     text-align: center;
-    color: white;
-    padding: 50px 20px;
-  }
+    background-position:  center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-text-inner h2{
+    font-weight: bold;
+    font-size: 70px;
+    color: #e73a3e;
+}
+.about-text-inner p{
+    font-weight: bold;
+    font-size: 15px;
+}
+.finix-text h6{
+    color: #e73a3e;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.finix-text h2{
+    font-weight:200;
+    font-size: 40px;
+    color: black;
+    margin-bottom: 15px;
+}
+.finix-text p{
+    color: #606060;
+    font-size: 18px;
+}
+.finix-text strong{
+    color: #3e3b3b;
+    font-size: 20px;
+    font-weight: 400;
+}
+.finix-text ul{
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+.finix-text ul li{
+    padding: 5px 0;
+}
+.finix-text ul li::before{
+    content: "\f00c";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 600;
+    color: #e73a3e;
+    display: inline-block;
+    margin-right: 10px;
+}
 
-  
-  .background-image {
-    background-image: url('https://romax.uz/wp-content/uploads/2023/02/121213.jpeg'); /* Подставьте путь к изображению */
-    background-size: cover;
-    background-position: center;
-    height: 500px; /* Высота фона */
-    filter: brightness(0.7); /* Настройте яркость по желанию */
+/* part 4 start */
+/* why choose us part */
+
+.graybg{
+    background: #f9fafb;
+}
+
+.features-items{
+    background: white;
+    padding: 10px;
+    margin-bottom: 30px;
+    box-shadow: 2.5px 4.33px 30px 0 rgba(64, 87, 191, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: .6s;
+}
+.features-items:hover{
+    transform: translateY(-12px);
+}
+.features-items::before{
+    content: "";
+    position: absolute;
+    top: -130px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 90%;
+    height: 70%;
+    background: #fdebeb;
+    border-radius: 50%;
+}
+.features-items .ft-icon i{
+    color: #e73a3e;
+    height: 90px;
+    width: 90px;
+    background:white;
+    font-size: 40px;
+    line-height: 90px;
+    border-radius: 50%;
+    z-index: 1;
+    position: relative;
+    margin-top: 15px;
+}
+.mtop-4{
+    margin-top: -30px;
+}
+.features-items:hover .ft-icon i{
+    background: #e73a3e;
+    color: white;
+}
+.features-items .ft-icon i{
+    transition: .6s;
+}
+.finix-text{
+    position: relative;
+}
+
+.play-animation-btn{
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+    background: #fff;
+    font-size: 60px;
+    line-height: 90px;
+    text-align: center;
+    position: absolute;
+    border-radius: 50%;
+    color: #e73a3e;
+    right: 41%;
+    bottom: 10%;
+}
+.play-animation-btn:before{
+    content: "";
+    height: 90px;
+    width: 90px;
+    background: #e73a3e;
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-  }
+    border-radius: 50%;
+    animation: playbtn 1.6s ease-out infinite;
+} 
+@keyframes playbtn{
+    0.30%{
+        transform: scale(0);
+        opacity: 1;
+    }
+    50%{
+        transform: scale(1.5);
+        opacity: .7;
+    }
+    100%{
+        transform: scale(2);
+        opacity: 0;
+    }
+}
 
-  .contact-section > h1 {
-    text-align: center;
-    align-items: center;
-    font-size: 56px; /* Увеличил размер шрифта h1 */
-    margin-bottom: 20px;
-    max-width: 50%;
-    margin-left: 25%;
-  }
+/*  applay-now-section */
 
-  .contact-button {
-    background-color: #FE951E;
+
+.finix-text .text-bold{
+    font-weight: bold;
+    margin-top: -10px;
+    font-size: 35px;
+}
+.finix-text .text-small{
+    font-size: 20px;
+}
+.apply-now-left-text{
+    margin-top: 25px;
+}
+.apply-now-left-text h2{
+    font-size: 40px;
     color: black;
-    border: none;
-    padding: 15px 30px;
+    font-weight: 500;
+}
+.step-taimeline ul{
+    list-style: none;
+    padding-left: 60px;
+    position: relative;
+}
+.step-taimeline strong{
+    display: block;
+    font-size: 25px;
+    
+}
+.step-taimeline p{
+    margin-top: 10px;
+    color: #606060;
+    margin-bottom: 20px;
+}
+.step-taimeline ul li{
+    position: relative;
+}
+.step-taimeline ul::before{
+    content: "";
+    position: absolute;
+    left: 15px;
+    top:15px;
+    width: 1px;
+    background: #e73a3e;
+    height: calc(100% - 100px);
+}
+.step-taimeline ul li::before{
+    content: attr(data-counter);
+    position: absolute;
+    left: -65px;
+    top:5px;
+    height: 40px;
+    width: 40px;
+    background: #f9fafb ;
+    border: 1px solid #e73a3e;
+    border-radius: 50%;
+    line-height: 40px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
+    color: #e73a3e;
+    font-size: 25px;
+   
+}
 
+.calculate-late{
+    background-color: #fdebeb;
+    padding: 10px;
+    
+}
+.calculate-from .form-groupe{
+    margin-bottom: 20px;
   
+}
+.calculate-from .form-groupe label{
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.calculate-from .form-groupe input{
+    margin-bottom: 20px;
+    border: none;
+    padding: 14px 15px;
+    
+    
+}
+.calculate-from .form-groupe select{
+    margin-bottom: 5px;
+    display: inline-block;
+    height: -53px;
 
+}
+.calculate-late h6{
+    color: #606060;
+    margin-bottom: 10px;
+}
+.calculate-late h3{
+    margin-bottom: 30px;
+    font-size: 35px;
+    font-weight: bold;
+}
 
+/* cll-to-actio section */
 
+.col-to-action-bg{
+    background-color: red;
+    padding: 60px;
+    border-radius: 10px;
+    
+}
+.col-to-action-bg h2{
+    color: white;
+    font-size: 30px;
+    font-weight: 400;
+    border-right: 2px solid black;
+    margin-top: 20px;
+}
+.call-to-action-phone{
+    margin-top: 20px;
+}
+.call-to-action-phone span{
+    display: inline-block;
+    font-size: 30px;
+    color:black;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: white;
+    text-align: center;
+    line-height: 70px;
+}
+.call-to-action-phone a{
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+    font-size: 40px;
+}
 
+/* Our-company-values section */
+.Our-company-values{
+    margin-top: 100px;
+}
+.company-valu-text h2{
+   font-weight: bold;
+    color: black;
+    font-size: 40px;
+}
+.value-items .value-icon{
+    font-size: 40px;
+    color: #e73a3e;
+    margin-right: 30px;
+}
+.value-items .value-text h3{
+    font-weight: bold;
+}
+.value-items .value-text p{
+    color: #606060;
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+.o-c-i {
+    text-align: right;
+    margin-top: 40px;
+}
 
+/* service - section Part */
 
+.finix-text .bold-text{
+    font-weight: bold;
+    color: black;
+}
+.service-tab-item
+.service-tab-item li{
+    flex: 1 1 auto;
+}
+.service-tab-item{
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 40px !important;
+}
+.service-tab-item li a span i{
+    background: #fff;
+    height: 80px;
+    width: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    font-size: 35px;
+    color: #666;
+    box-shadow: 10px 10px 30px 10px rgba(0, 0, 0, 0.1);
+    margin: 0px 50px;
+}
+.service-tab-item li span{}
+.service-tab-item li a strong {
+    color: #222;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.service-tab-item li a.active span i{
+    color: #e73a3e;
+}
+.services-tab-item li a.active{
+    position: relative;
+}
+.services-tab-item li a.active::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 115%;
+    width: 230px;
+    height: 2px;
+    background: red;
+    
+}
+.services-tab-content-text ul{
+    list-style: none;
+    padding-left: 0;
+}
+.services-tab-content-text ul li::before{
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: red;
+    margin-right: 15px;
+}
+.services-tab-content-text h3{
+    margin-bottom: 18px;
+    font-weight: bold;
+    font-size: 25px;
+}
+.services-tab-content-text p{
+    color: #606060;
+    font-size: 17px;
+}
+.services-tab-content-text ul li{
+    color: #606060;
+    margin-bottom: 10px;
+}
 
+/* testimonial section start */
+.tetimonial-content p{
+    padding-top: 50px;
+    font-size: 30px;
+}
+.client-details h5{
+    color: #e73a3e;
+}
+.client-details h6{
+    color: #666;
+}
 
+/* member sesction part */
 
-
-
-
-
-
-
-  @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-
-  .contact { background:rgb(30,30,40); height: 450px; padding-top: 40px; padding-bottom: 40px;}
-
-  form { max-width:420px; margin:50px auto; }
-
-  .feedback-input {
-    color:white;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight:500;
-    font-size: 18px;
-    border-radius: 5px;
-    line-height: 22px;
-    background-color: transparent;
-    border:2px solid #CC6666;
-    transition: all 0.3s;
-    padding: 13px;
-    margin-bottom: 15px;
-    width:100%;
-    box-sizing: border-box;
-    outline:0;
-  }
-
-  .feedback-input:focus { border:2px solid #CC4949; }
-
-  .textarea {
-    color:white;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight:500;
-    font-size: 18px;
-    border-radius: 5px;
-    line-height: 22px;
-    background-color: transparent;
-    border:2px solid #CC6666;
-    transition: all 0.3s;
-    padding: 13px;
-    margin-bottom: 15px;
-    width:100%;
-    box-sizing: border-box;
-    outline:0;
-    height: 150px;
-    line-height: 150%;
-    resize:vertical;
-  }
-
-  [type="submit"] {
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+.member-image img{
     width: 100%;
-    background:#CC6666;
-    border-radius:5px;
-    border:0;
-    cursor:pointer;
+    height: auto;
+
+}
+    
+.member-content h4{
+    color: #e73a3e;
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-top: 25px;
+    font-weight: bold;
+    font-weight: 600;
+}
+.member-content p{
+    color: #606060;
+   
+}
+
+.member-socail-profile ul{
+    text-align: center;
+    padding-left: 0;
+    margin-bottom: 40px;
+}
+.member-socail-profile ul li{
+    display: inline-block;
+    transition: .5s ease-in-out;
+    transform: translateY(45px);
+    opacity: 0;
+    visibility: hidden;
+}
+.member-image:hover .member-socail-profile ul li{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.member-image .member-socail-profile ul li:nth-child(1){
+    transition-delay: .2s;
+}
+.member-image .member-socail-profile ul li:nth-child(2){
+    transition-delay: .3s;
+}
+.member-image .member-socail-profile ul li:nth-child(3){
+    transition-delay: .4s;
+}
+.member-image .member-socail-profile ul li:nth-child(4){
+    transition-delay: .5s;
+}
+.member-socail-profile ul li a{
+    color: red;
+    transition: .5s;
+}
+.member-socail-profile ul li a:hover{
     color:white;
-    font-size:24px;
-    padding-top:10px;
-    padding-bottom:10px;
-    transition: all 0.3s;
-    margin-top:-4px;
-    font-weight:700;
-  }
-  [type="submit"]:hover { background:#CC4949; }
-</style>
+    background: red;
+}
+.member-socail-profile ul li a{
+    display: block;
+    font-size: 20px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: #fff;
+    line-height: 40px;
+    color: black;
+}
+
+.member-socail-profile{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+.member-image{
+    position: relative;
+}
+
+/* blog-section-part start */
+
+.blog-thumbill img{
+   
+}
+.blog-content{}
+.blog-content p{
+    margin-top: 25px;
+    color: #e73a3e;
+    font-size: 20px;
+}
+.blog-content h3 a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+.blog-content a{
+    color: black;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: .5s;
+  
+}
+.blog-item:hover .blog-content a{
+    letter-spacing: 1px;
+    color: #e73a3e;
+}
+.blog-item:hover .blog-content h3 a{
+    letter-spacing: 0;
+    color: #111;
+}   
 
 
+/* footer section */
+.footer{
+    background-color: black;
+    color: white;
+}
+.footer a{
+    color: white;
+}
+ .footer-bottom{
+    background-color: black;
+    color: white;
+}
+.footer-widget img{
+    margin-bottom: 25px;
+}
+.footer-widget p{
+    font-size: 17px;
+}
+.footer-widget ul{
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+.footer-widget h3{
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid #444;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.footer-widget ul li a{
+    text-decoration: none;
+    padding-bottom: 15px;
+}
+.footer-widget ul li{
+    margin-bottom: 15px;
+}
+.footer-top{
+    border-bottom: 1px solid #444;
+}
+.footer-widget h3{}
 
-{% endblock %}
+.widget-socail{}
+.widget-socail ul{
+    display: flex;
+}
+.widget-socail ul li{
+    margin: 10px 0;
+    margin: 0 !important;
+ 
+}
+.widget-socail ul li span{
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 18px;
+}
+.widget-socail ul li a{
+    transition: .4s;
+    font-size: 20px;
+    padding: 10px 10px;
+}
+.widget-socail ul li a:hover{
+    letter-spacing: 1.5;
+    color: red;
+}
+
+.footer-widget ul li a:hover{
+    letter-spacing: 2px;
+    color: yellow;
+    transition: .5s;
+}
+.footer-contact{}
+.footer-content-item span{
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 20px;
+}
+.footer-content-item a{
+    text-decoration: none;
+}
+.footer-content-item{
+    margin-bottom: 20px;
+}
+
+
+  </style>
+</html>
+
